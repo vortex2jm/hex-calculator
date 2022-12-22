@@ -1,5 +1,6 @@
 #include <iostream>
 #include <iomanip>
+#include <unistd.h>
 using namespace std;
 
 void bin(unsigned int number);
@@ -17,24 +18,30 @@ int main(){
         if(!option){
             system("clear");
             cout << "Exit sucess..." << endl;
+            sleep(1);
+            system("clear");
             break;
         }
         system("clear");
-        cout << "Type number: " << endl;
-        cin >> number;
 
         switch (option){
             case 1:
+                cout << "Type number: " << endl;
+                cin >> number;
                 cout << "Conversion: " << "0x" << hex << number << endl << "\n\nPress ENTER to continue";
                 scanf("%*c");
                 cin.get(x);
                 break;
-            case 2: 
+            case 2:
+                cout << "Type number: " << endl;
+                cin >> number; 
                 cout << "Conversion: " << oct << number << "\n\nPress ENTER to continue";
                 scanf("%*c");
                 cin.get(x);
                 break;
             case 3:
+                cout << "Type number: " << endl;
+                cin >> number;
                 cout << "Conversion: ";
                 bin(number);
                 cout << "\n\nPress ENTER to continue";
@@ -43,6 +50,7 @@ int main(){
                 break;
             default:
                 cout << "Invalid option. Choose another one!" << endl;
+                sleep(2);
                 break;
         }
         system("clear");
